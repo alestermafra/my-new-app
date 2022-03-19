@@ -1,11 +1,19 @@
 import { useState } from 'react';
 
-function Home() {
+function Home(props) {
     return (
         <>
-            <h1>Home 157</h1>
+            <h1>{props.date}</h1>
         </>
     );
+}
+
+export async function getStaticProps() {
+    return {
+        props: {
+            date: new Date().toUTCString()
+        }
+    }
 }
 
 export default Home;
