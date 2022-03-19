@@ -12,7 +12,9 @@ export async function getStaticProps() {
     return {
         props: {
             date: new Date().toUTCString()
-        }
+        },
+
+        revalidate: 10
     }
 }
 
